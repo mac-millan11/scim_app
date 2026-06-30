@@ -19,3 +19,5 @@ spec:
         image: gopalsub/scim:v1
         ports:
         - containerPort: 80
+
+  
