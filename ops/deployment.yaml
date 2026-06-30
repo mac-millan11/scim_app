@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: gopalsub/scim:v1
+        image: gopalsub/scim-app:v1
         ports:
         - containerPort: 80
 
