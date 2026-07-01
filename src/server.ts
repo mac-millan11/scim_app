@@ -8,6 +8,13 @@ const PORT = 3000;
 
 app.use(userRouter);
 
+app.use((req, res, next) => {
+    console.log("=================================");
+    console.log(req.method, req.originalUrl);
+    console.log(req.headers);
+    next();
+});
+
 
 app.get("/health", (req:express.Request, res: express.Response)=>{
     res.json({"msg": "server running and healthy"})
@@ -27,7 +34,7 @@ app.get('/scim/ServiceProviderConfig', (req:express.Request, res: express.Respon
     console.log(req.originalUrl);
     console.log(req.headers.authorization);
 
-    
+
 
     res.status(200).json({
         "schemas": [
