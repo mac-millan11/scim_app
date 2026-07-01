@@ -40,7 +40,6 @@ app.get("/scim/users", (req:express.Request, res: express.Response)=>{
     console.log(operator);  // eq
     console.log(value);     // alice@contoso.com
 
-    res.send("OK");
     res.status(200).json({
         schemas: [
             "urn:ietf:params:scim:api:messages:2.0:ListResponse"
@@ -50,7 +49,7 @@ app.get("/scim/users", (req:express.Request, res: express.Response)=>{
         startIndex: 1,
         itemsPerPage: 0
     });
-    
+
 });
 app.get("/scim/groups", (req:express.Request, res: express.Response)=>{
     res.status(200)
