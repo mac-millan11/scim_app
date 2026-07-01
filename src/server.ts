@@ -66,7 +66,7 @@ app.post("/scim/users", (req:express.Request, res: express.Response)=>{
 
     
     console.log("====body====")
-    res.sendStatus(201).json({
+    res.status(201).json({
             "schemas": [
                 "urn:ietf:params:scim:schemas:core:2.0:User"
             ],
