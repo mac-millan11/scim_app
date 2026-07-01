@@ -21,7 +21,15 @@ app.get("/health", (req:express.Request, res: express.Response)=>{
 });
 
 app.get("/scim/users", (req:express.Request, res: express.Response)=>{
-    res.status(200)
+    res.status(200).json({
+        schemas: [
+            "urn:ietf:params:scim:api:messages:2.0:ListResponse"
+        ],
+        totalResults: 0,
+        Resources: [],
+        startIndex: 1,
+        itemsPerPage: 0
+    });
 });
 app.get("/scim/groups", (req:express.Request, res: express.Response)=>{
     res.status(200)
