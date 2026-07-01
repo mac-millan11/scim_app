@@ -3,11 +3,11 @@ import { userRouter } from './routes/usersRoutes.js';
 
 const app = express()
 
-app.use(express.json())
 
 const PORT = 3000;
 
 
+app.use(express.json());
 app.use(userRouter);
 
 
@@ -59,7 +59,8 @@ app.get("/scim/users", (req:express.Request, res: express.Response)=>{
 
 app.post("/scim/users", (req:express.Request, res: express.Response)=>{
     const body = req.body;
-    console.log(body)
+    console.log(body);
+    console.log("====body====")
     res.sendStatus(201);
 });
 
