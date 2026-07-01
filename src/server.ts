@@ -23,8 +23,9 @@ app.get("/scim/groups", (req:express.Request, res: express.Response)=>{
 
 app.get('/scim/ServiceProviderConfig', (req:express.Request, res: express.Response)=>{
 
-    const token = req.headers
-    console.log(token)
+    console.log(req.method);
+    console.log(req.originalUrl);
+    console.log(req.headers.authorization);
 
     res.status(200).json({
         "schemas": [
