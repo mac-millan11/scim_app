@@ -7,7 +7,9 @@ const app = express()
 const PORT = 3000;
 
 
-app.use(express.json());
+app.use(express.json({
+    type: ["application/json", "application/scim+json"]
+}));
 app.use(userRouter);
 
 
