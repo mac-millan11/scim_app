@@ -16,7 +16,7 @@ app.get("/health", (req:express.Request, res: express.Response)=>{
 
 app.get('/scim/ServiceProviderConfig', (req:express.Request, res: express.Response)=>{
 
-    const token = req.header
+    const token = req.headers
     console.log(token)
 
     res.status(200).json({
