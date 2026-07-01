@@ -7,6 +7,7 @@ const PORT = 3000;
 
 
 app.use(userRouter);
+app.use(express.json())
 
 app.use((req, res, next) => {
     console.log("=================================");
@@ -53,6 +54,13 @@ app.get("/scim/users", (req:express.Request, res: express.Response)=>{
     });
 
 });
+
+app.post("/scim/users", (req:express.Request, res: express.Response)=>{
+    const body = req.body;
+    console.log(body)
+});
+
+
 app.get("/scim/groups", (req:express.Request, res: express.Response)=>{
     res.status(200)
 });
