@@ -27,6 +27,8 @@ app.get('/scim/ServiceProviderConfig', (req:express.Request, res: express.Respon
     console.log(req.originalUrl);
     console.log(req.headers.authorization);
 
+    
+
     res.status(200).json({
         "schemas": [
             "urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig"
