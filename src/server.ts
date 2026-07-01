@@ -32,9 +32,10 @@ app.get("/scim/users", (req:express.Request, res: express.Response)=>{
     console.log(match)
 
     if (!match) {
-        // return res.status(400).send("Invalid filter");
+        console.log(!match)
+        return res.status(400).send("Invalid filter");
+        return
     }
-    //@ts-ignore
     const [, attribute, operator, value] = match;
 
     console.log(attribute); // userName
