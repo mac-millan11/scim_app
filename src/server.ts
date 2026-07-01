@@ -5,14 +5,14 @@ const app = express()
 
 const PORT = 3000;
 
+app.use(express.json())
+
 
 app.use(userRouter);
-app.use(express.json())
+
 
 app.use((req, res, next) => {
     console.log("=================================");
-    console.log(req.method, req.originalUrl);
-    console.log(req.headers);
     next();
 });
 
