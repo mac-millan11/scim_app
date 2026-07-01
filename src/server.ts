@@ -13,6 +13,13 @@ app.get("/health", (req:express.Request, res: express.Response)=>{
     res.json({"msg": "server running and healthy"})
 });
 
+app.get("/scim/users", (req:express.Request, res: express.Response)=>{
+    res.status(200)
+});
+app.get("/scim/groups", (req:express.Request, res: express.Response)=>{
+    res.status(200)
+});
+
 
 app.get('/scim/ServiceProviderConfig', (req:express.Request, res: express.Response)=>{
 
