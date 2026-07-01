@@ -3,9 +3,9 @@ import { userRouter } from './routes/usersRoutes.js';
 
 const app = express()
 
-const PORT = 3000;
-
 app.use(express.json())
+
+const PORT = 3000;
 
 
 app.use(userRouter);
@@ -13,6 +13,8 @@ app.use(userRouter);
 
 app.use((req, res, next) => {
     console.log("=================================");
+    console.log(req.method, req.originalUrl);
+    console.log(req.headers);
     next();
 });
 
@@ -58,6 +60,7 @@ app.get("/scim/users", (req:express.Request, res: express.Response)=>{
 app.post("/scim/users", (req:express.Request, res: express.Response)=>{
     const body = req.body;
     console.log(body)
+    res.sendStatus(201);
 });
 
 
