@@ -61,9 +61,21 @@ app.get("/scim/users", (req:express.Request, res: express.Response)=>{
 
 app.post("/scim/users", (req:express.Request, res: express.Response)=>{
     const body = req.body;
-    console.log(body);
+    const userName = req.body
+    const displayName = req.body
+
+    
     console.log("====body====")
-    res.sendStatus(201);
+    res.sendStatus(201).json({
+            "schemas": [
+                "urn:ietf:params:scim:schemas:core:2.0:User"
+            ],
+            "id": "42",
+            "userName": userName,
+            "displayName": displayName,
+            "active": true
+        }
+    );
 });
 
 
