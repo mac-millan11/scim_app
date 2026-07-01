@@ -64,6 +64,8 @@ app.post("/scim/users", (req:express.Request, res: express.Response)=>{
     const userName = req.body
     const displayName = req.body
 
+    console.log(body)
+
     
     console.log("====body====")
     res.status(201).json({
