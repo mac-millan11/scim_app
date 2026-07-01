@@ -31,10 +31,10 @@ app.get("/scim/users", (req:express.Request, res: express.Response)=>{
     const match = filter.match(/^(\w+)\s+(eq|ne|co|sw|ew)\s+"(.+)"$/);
     console.log(match)
 
-    // if (!match) {
-    //     return res.status(400).send("Invalid filter");
-    // }
-
+    if (!match) {
+        // return res.status(400).send("Invalid filter");
+    }
+    //@ts-ignore
     const [, attribute, operator, value] = match;
 
     console.log(attribute); // userName
