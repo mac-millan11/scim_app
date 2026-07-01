@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: scim-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+
+spec:
+  ingressClassName: nginx
+
+  tls:
+  - hosts:
+    - scim.gopalsub.online
+    secretName: scim-tls
+
+  rules:
+  - host: scim.gopalsub.online
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mainservice
+            port:
+              number: 80
