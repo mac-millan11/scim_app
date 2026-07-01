@@ -56,4 +56,4 @@ jobs:
       - name: Deploy New Image
         run: |
           kubectl set image deployment/scimappdeployment \
-            nginx=gopalsub/scim:${{ github.sha }}
+            nginx=gopalsub/scim-app:${{ github.sha }}
